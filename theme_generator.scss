@@ -1,107 +1,22 @@
 
 
-@mixin addTheme($name, $vals) {
+@mixin addTheme($name, $colors) {
 
   html[data-theme="#{$name}"] {
 
-    // text
-    .t0 {
-      color: nth($vals, 1);
-    }
-    .t1 {
-      color: nth($vals, 2);
-    }
-    .t2 {
-      color: nth($vals, 3);
-    }
-    .t3 {
-      color: nth($vals, 4);
-    }
-    .t4 {
-      color: nth($vals, 5);
-    }
-    .t5 {
-      color: nth($vals, 6);
-    }
-    .t6 {
-      color: nth($vals, 7);
-    }
-    .t7 {
-      color: nth($vals, 8);
-    }
-    .t8 {
-      color: nth($vals, 9);
-    }
-    // fill
-    .f0 {
-      background-color: nth($vals, 1);
-    }
-    .f1 {
-      background-color: nth($vals, 2);
-    }
-    .f2 {
-      background-color: nth($vals, 3);
-    }
-    .f3 {
-      background-color: nth($vals, 4);
-    }
-    .f4 {
-      background-color: nth($vals, 5);
-    }
-    .f5 {
-      background-color: nth($vals, 6);
-    }
-    .f6 {
-      background-color: nth($vals, 7);
-    }
-    .f7 {
-      background-color: nth($vals, 8);
-    }
-    .f8 {
-      background-color: nth($vals, 9);
-    }
-    // borders
-    .b0 {
-      border-style: solid;
-      border-color: nth($vals, 1);;
-    }
-    .b-1 {
-      border-style: solid;
-      border-color: nth($vals, 2);;
-    }
-    .b2 {
-      border-style: solid;
-      border-color: nth($vals, 3);;
-    }
-    .b3 {
-      border-style: solid;
-      border-color: nth($vals, 4);;
-    }
-    .b4 {
-      border-style: solid;
-      border-color: nth($vals, 5);;
-    }
-    .b5 {
-      border-style: solid;
-      border-color: nth($vals, 6);;
-    }
-    .b6 {
-      border-style: solid;
-      border-color: nth($vals, 7);;
-    }
-    .b7 {
-      border-style: solid;
-      border-color: nth($vals, 8);;
-    }
-    .b8 {
-      border-style: solid;
-      border-color: nth($vals, 9);;
-    }
+    @each $color in $colors {
+      $i: index($colors, $color);
 
-    .border {
-      border-style: solid;
-      border-color: nth($vals, 1);
-      border-width: 1px;
+      .t#{$i} {
+        color: $color;
+      }
+      .f#{$i} {
+        background-color: $color;
+      }
+      .b#{$i} {
+        border-style: solid;
+        border-color: $color;
+      }
     }
   }
 }
