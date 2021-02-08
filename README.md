@@ -1,6 +1,6 @@
 # CSS Theme Generator
 
-## General
+## my-themes.scss
 ```
 $white:
         #111B1F,
@@ -28,3 +28,19 @@ $ruby:
 @include addTheme("white", $white);
 @include addTheme("ruby", $ruby);
 ```
+
+## Functions
+t[index] = text color
+f[index] = background color (fill)
+b[index] = border color
+
+## page.html
+```
+<div class="t0 f4 b7">
+    hello world
+</div>
+```
+
+
+
+
