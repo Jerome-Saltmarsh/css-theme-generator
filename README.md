@@ -1,12 +1,18 @@
 # CSS Theme Generator
+Theme generator makes it easy to work with color palettes in your html instead of hard coding colors.
+There are three different color properties the user can target
 
-## classes
+## Guide
 ```
 t[index] // text color
-f[index] // background color (fill)
+f[index] // fill color (background)
 b[index] // border color
+
+<div class="t0 f5 b3">
+    Hello world
+</div>
 ```
-## page.html
+## Example.html
 ```
 <html data-theme="ruby">
     <body>
@@ -23,8 +29,6 @@ b[index] // border color
 </html>
 
 <style lang="scss">
-    @import "theme_generator";
-    
      $white:
         #111B1F, // 1
         #1F272A, // 2
@@ -47,6 +51,7 @@ b[index] // border color
         #491c1a, // 8
         #361411; // 9
         
+    @import "theme_generator";
     @include addTheme("white", $white);
     @include addTheme("ruby", $ruby);
 </style>
